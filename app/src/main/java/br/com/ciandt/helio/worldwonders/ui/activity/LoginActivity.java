@@ -1,10 +1,17 @@
-package br.com.ciandt.helio.worldwonders;
+package br.com.ciandt.helio.worldwonders.ui.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
+
+import br.com.ciandt.helio.worldwonders.ui.activity.R;
 
 public class LoginActivity extends Activity {
 
@@ -12,6 +19,9 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        Button login = (Button) findViewById(R.id.login);
+        login.setOnClickListener(sendMailToMainActivity);
 
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
     }
@@ -79,4 +89,19 @@ public class LoginActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    private OnClickListener sendMailToMainActivity = new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+
+            EditText emailText = (EditText) findViewById(R.id.email);
+            Bundle bundle = new Bundle();
+            bundle.putString("email", emailText.getText().toString());
+            intent.putExtras(bundle);
+
+            startActivity(intent);
+        }
+    };
+
 }
