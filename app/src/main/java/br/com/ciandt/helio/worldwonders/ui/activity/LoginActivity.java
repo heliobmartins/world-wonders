@@ -93,7 +93,11 @@ public class LoginActivity extends Activity {
     private OnClickListener sendMailToMainActivity = new OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            //Comando utilizado no Hands On 1, 2 e 4
+            //Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+
+            //Comando utilizado no Hands On 3
+            Intent intent = new Intent(LoginActivity.this, MasterDetailActivity.class);
 
             EditText emailText = (EditText) findViewById(R.id.email);
             Bundle bundle = new Bundle();

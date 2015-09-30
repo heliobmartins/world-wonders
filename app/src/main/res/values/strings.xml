@@ -6,6 +6,7 @@
     <string name="email">Email</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_masterDetail">MasterDetailActivity</string>
 
     <string name="hello_world">Hello world!</string>
 </resources>
