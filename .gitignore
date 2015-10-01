@@ -1,3 +1,4 @@
+
 # Built application files
 *.apk
 *.ap_
@@ -33,3 +34,5 @@ captures/
 
 # IDE Config Files
 .idea/
+
+app/app.iml
