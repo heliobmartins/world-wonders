@@ -25,12 +25,16 @@ public class MainActivity extends AppCompatActivity {
 
         Bundle bundleExtras = getIntent().getExtras();
 
+        final ListView listView = (ListView) findViewById(R.id.list_view_wonders);
+
         WonderManager wonderManager = new WonderManager();
 
-        wonderManager.getAllWonders(new OperationListener<String>() {
+        wonderManager.getAllWonders(new OperationListener<List<Wonder>>() {
             @Override
-            public void onOperationSuccess(String s) {
-                Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
+            public void onOperationSuccess(List<Wonder> s) {
+                FeedBaseAdapter feedBaseAdapter = new FeedBaseAdapter(MainActivity.this, s);
+                listView.setAdapter(feedBaseAdapter);
+                Toast.makeText(MainActivity.this, "Maravilhas Atualizadas com Sucesso", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -40,16 +44,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Toast.makeText(this, bundleExtras.getString("email"), Toast.LENGTH_SHORT).show();
-
-        List<Wonder> list = new ArrayList<>();
-        list.add(new Wonder("1","Name 1","Brasil","Bla Bla"));
-        list.add(new Wonder("2","Name 2","Brasil","Bla Bla"));
-        list.add(new Wonder("3","Name 3","Brasil","Bla Bla"));
-
-
-        ListView listView = (ListView) findViewById(R.id.list_view_wonders);
-        FeedBaseAdapter feedBaseAdapter = new FeedBaseAdapter(this,list);
-        listView.setAdapter(feedBaseAdapter);
     }
 
     @Override
