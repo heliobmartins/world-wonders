@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/adapter_feed_vertical_margin"
+    android:paddingLeft="@dimen/adapter_feed_horizontal_margin"
+    android:paddingRight="@dimen/adapter_feed_horizontal_margin"
+    android:paddingTop="@dimen/adapter_feed_vertical_margin" >
+
+    <ImageView
+        android:id="@+id/image_view_world_wonder"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="20dp"
+        android:scaleType="centerCrop" />
+    
+    <TextView
+        android:id="@+id/text_view_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/image_view_world_wonder"
+        tools:text="Nome da Maravilha do Mundo" />
+
+    <TextView
+        android:id="@+id/text_view_country"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_view_name"
+        android:layout_alignLeft="@+id/text_view_name"
+        tools:text="Peru" />
+
+    <ProgressBar
+        android:id="@+id/prg_bar_world_wonder"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+</RelativeLayout>

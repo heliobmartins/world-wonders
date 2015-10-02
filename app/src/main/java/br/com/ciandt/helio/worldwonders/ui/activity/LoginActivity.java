@@ -11,8 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import br.com.ciandt.helio.worldwonders.ui.activity.R;
-
 public class LoginActivity extends Activity {
 
     @Override
