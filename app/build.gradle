@@ -17,6 +17,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    productFlavors{
+        prod{
+            buildConfigField "String","API_SERVER","\"https://api.parse.com/1\""
+        }
+
+        stage{
+            buildConfigField "String","API_SERVER","\"https://api.parse.com/1\""
+            //Com essa configuração é possível ter um segundo aplicativo instalado.
+            applicationId = "br.com.ciandt.helio.worldwonders.stage"
+        }
+    }
 }
 
 dependencies {

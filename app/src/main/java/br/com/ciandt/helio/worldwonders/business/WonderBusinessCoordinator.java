@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.ciandt.helio.worldwonders.entity.Wonder;
+import br.com.ciandt.helio.worldwonders.infrastructure.ApplicationConfiguration;
 import br.com.ciandt.helio.worldwonders.infrastructure.Constants;
 import br.com.ciandt.helio.worldwonders.integrator.BaseIntegrator;
 
@@ -19,7 +20,7 @@ public class WonderBusinessCoordinator {
     public List<Wonder> getAllWonders(){
         List<Wonder> wonderList = new ArrayList<>();
         BaseIntegrator baseIntegrator = new BaseIntegrator();
-        String jsonResult = baseIntegrator.doGetRequest(Constants.Integrator.WorldWondersApi.HOST_PARSE +
+        String jsonResult = baseIntegrator.doGetRequest(ApplicationConfiguration.getApiServer() +
                 Constants.Integrator.WorldWondersApi.GET_WONDERS_LIST);
 
         if (jsonResult != null){
