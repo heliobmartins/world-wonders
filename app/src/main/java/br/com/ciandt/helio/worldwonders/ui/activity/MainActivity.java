@@ -6,6 +6,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import br.com.ciandt.helio.worldwonders.entity.vo.OperationError;
+import br.com.ciandt.helio.worldwonders.listener.OperationListener;
+import br.com.ciandt.helio.worldwonders.manager.WonderManager;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -14,6 +18,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Bundle bundleExtras = getIntent().getExtras();
+
+        WonderManager wonderManager = new WonderManager();
+
+        wonderManager.getAllWonders(new OperationListener<String>() {
+            @Override
+            public void onOperationSuccess(String s) {
+                Toast.makeText(MainActivity.this,s,Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onOperationError(OperationError error) {
+                Toast.makeText(MainActivity.this,error.getErrorMessage(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
         Toast.makeText(this, bundleExtras.getString("email"), Toast.LENGTH_SHORT).show();
     }
 
