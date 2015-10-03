@@ -24,6 +24,13 @@
             android:name=".MasterDetailActivity"
             android:label="@string/title_activity_masterDetail" >
         </activity>
+
+        <provider
+            android:authorities="br.com.ciandt.helio.worldwonders"
+            android:name="br.com.ciandt.helio.worldwonders.database.provider.WorldWondersContentProvider"
+            android:exported="false">
+        </provider>
+
     </application>
 
 </manifest>

@@ -12,6 +12,7 @@ import java.util.List;
 
 import br.com.ciandt.helio.worldwonders.entity.Wonder;
 import br.com.ciandt.helio.worldwonders.entity.vo.OperationError;
+import br.com.ciandt.helio.worldwonders.infrastructure.ProviderTest;
 import br.com.ciandt.helio.worldwonders.listener.OperationListener;
 import br.com.ciandt.helio.worldwonders.manager.WonderManager;
 import br.com.ciandt.helio.worldwonders.ui.adapter.FeedBaseAdapter;
@@ -26,6 +27,16 @@ public class MainActivity extends AppCompatActivity {
         Bundle bundleExtras = getIntent().getExtras();
 
         final ListView listView = (ListView) findViewById(R.id.list_view_wonders);
+
+        ProviderTest providerTest = new ProviderTest(this);
+        providerTest.insertTestWonder("Wonder 1","Country 1","Description 1",null);
+        providerTest.insertTestWonder("Wonder 2","Country 2","Description 2",null);
+        providerTest.insertTestWonder("Wonder 3", "Country 3", "Description 3", null);
+
+        providerTest.printWonderList();
+        providerTest.deleteTestWonder(1);
+        providerTest.deleteTestWonder("Wonder 2");
+        providerTest.printWonderList();
 
         WonderManager wonderManager = new WonderManager();
 
