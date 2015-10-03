@@ -1,0 +1,182 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:gravity="center"
+              android:paddingBottom="@dimen/activity_vertical_margin"
+              android:paddingLeft="@dimen/activity_horizontal_margin"
+              android:paddingRight="@dimen/activity_horizontal_margin"
+              android:paddingTop="@dimen/activity_vertical_margin"
+              tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:text="@string/calculator_title"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp">
+
+        <EditText
+            android:id="@+id/sumOp1"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" + "
+            android:textSize="24sp"/>
+
+        <EditText
+            android:id="@+id/sumOp2"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:inputType="text"/>
+
+        <Button
+            android:id="@+id/buttonSum"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="wrap_content"
+            android:text=" = "
+            android:textSize="24sp"/>
+
+        <TextView
+            android:id="@+id/sumTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="240"
+            android:layout_marginLeft="@dimen/result_margin_left"
+            android:textSize="24sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/subtractOp1"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" - "
+            android:textSize="24sp"/>
+
+        <EditText
+            android:id="@+id/subtractOp2"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:inputType="text"/>
+
+        <Button
+            android:id="@+id/buttonSubtract"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="wrap_content"
+            android:text=" = "
+            android:textSize="24sp"/>
+
+        <TextView
+            android:id="@+id/subtractTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="240"
+            android:layout_marginLeft="@dimen/result_margin_left"
+            android:textSize="24sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/multiplyOp1"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" * "
+            android:textSize="24sp"/>
+
+        <EditText
+            android:id="@+id/multiplyOp2"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:inputType="text"/>
+
+        <Button
+            android:id="@+id/buttonMultiply"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="wrap_content"
+            android:text=" = "
+            android:textSize="24sp"/>
+
+        <TextView
+            android:id="@+id/multiplyTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="240"
+            android:layout_marginLeft="@dimen/result_margin_left"
+            android:textSize="24sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/divisionOp1"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" / "
+            android:textSize="24sp"/>
+
+        <EditText
+            android:id="@+id/divisionOp2"
+            android:layout_width="@dimen/edit_text_width"
+            android:layout_height="wrap_content"
+            android:inputType="text"/>
+
+        <Button
+            android:id="@+id/buttonDivision"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="wrap_content"
+            android:text=" = "
+            android:textSize="24sp"/>
+
+        <TextView
+            android:id="@+id/divisionTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="240"
+            android:layout_marginLeft="@dimen/result_margin_left"
+            android:textSize="24sp"/>
+    </LinearLayout>
+
+</LinearLayout>

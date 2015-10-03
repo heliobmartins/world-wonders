@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">DojoUnitTest</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="op1Invalid">First argument is invalid</string>
+    <string name="invalid">NAN</string>
+    <string name="op2Invalid">Second argument is invalid</string>
+    <string name="calculator_title">Super Simple Calculator</string>
+</resources>
