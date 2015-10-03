@@ -10,6 +10,10 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
+
+import br.com.ciandt.helio.worldwonders.ui.activity.MainActivity;
 import br.com.ciandt.helio.worldwonders.ui.activity.R;
 import br.com.ciandt.helio.worldwonders.entity.Wonder;
 
@@ -44,8 +48,8 @@ public class FeedBaseAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup viewGroup) {
 
         // TODO
-
         ViewHolder viewHolder = null;
+
         if (convertView == null) {
             LayoutInflater layoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.feed_item, viewGroup, false);
@@ -63,6 +67,21 @@ public class FeedBaseAdapter extends BaseAdapter {
         viewHolder.prgBarViewWorldWonder.setIndeterminate(true);
         viewHolder.prgBarViewWorldWonder.setVisibility(View.VISIBLE);
 
+        final ProgressBar progressBar = viewHolder.prgBarViewWorldWonder;
+
+        Picasso.with(mContext).load(wonder.imageUrl).into(viewHolder.imageViewWorldWonder, new Callback() {
+            @Override
+            public void onSuccess() {
+                progressBar.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onError() {
+                progressBar.setVisibility(View.GONE);
+            }
+        });
+
+
         return convertView;
     }
 
@@ -76,9 +95,9 @@ public class FeedBaseAdapter extends BaseAdapter {
 
         private ViewHolder(View convertView) {
             textViewName = (TextView) convertView.findViewById(R.id.text_view_name);
-            imageViewLike = (ImageView) convertView.findViewById(R.id.image_view_world_wonder);
+            //imageViewLike = (ImageView) convertView.findViewById(R.id.image_view_world_wonder);
             textViewCountry = (TextView) convertView.findViewById(R.id.text_view_country);
-            //imageViewWorldWonder = (ImageView) convertView.findViewById(R.id.text_view_name);
+            imageViewWorldWonder = (ImageView) convertView.findViewById(R.id.image_view_world_wonder);
             prgBarViewWorldWonder = (ProgressBar) convertView.findViewById(R.id.prg_bar_world_wonder);
         }
 
