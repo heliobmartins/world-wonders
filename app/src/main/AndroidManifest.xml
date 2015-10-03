@@ -31,6 +31,9 @@
             android:exported="false">
         </provider>
 
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="05615fb7962667418d515e420f11c75341320427" />
     </application>
 
 </manifest>
